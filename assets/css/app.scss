@@ -1,0 +1,35 @@
+// customize some Bootstrap variables
+$primary: rgba(239, 162, 119, 1);
+$secondary: rgba(71, 102, 183, 1);
+
+// the ~ allows you to reference things in node_modules
+@import "~bootstrap/scss/bootstrap";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#navbarSupportedContent {
+    background-color: $primary;
+    padding: 5px;
+}
+
+.navbar {
+    padding: 0;
+    z-index: 2;
+}
+
+.nav-link {
+    color: #FFFFFF;
+}
+
+.block {
+    background-color: $secondary;
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
