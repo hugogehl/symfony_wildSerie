@@ -1,0 +1,30 @@
+{# templates/wild/category.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Category{% endblock %}
+
+{% block body %}
+
+    <h1>Séries séléctionnées : </h1>
+
+    {% for category in categoryName %}
+
+        <div class="media">
+            <img class="align-self-start mr-3 w-25" src="{{category.poster}}" alt="{{ category.title }} poster">
+            <div class="media-body">
+                <h1 class="mt-0">{{ category.title }}</h1>
+                <p class="w-50">{{ category.summary }}</p>
+                <p>Categorie : {{ category.category.name }}</p>
+            </div>
+        </div>
+
+    {% else %}
+        Aucune série trouvée.
+    {% endfor %}
+
+    <a href="{{ path('app_index') }}">
+        Retour à l'accueil
+    </a>
+
+{% endblock %}
