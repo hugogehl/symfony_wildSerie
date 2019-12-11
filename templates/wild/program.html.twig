@@ -1,0 +1,37 @@
+{# templates/wild/program.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Walking dead{% endblock %}
+
+{% block body %}
+
+    <div class="media">
+        <img class="align-self-start mr-3" src="{{programName.poster}}" alt="{{ programName.title }} poster">
+        <div class="media-body">
+            <h1 class="mt-0">{{ programName.title }}</h1>
+            <p>{{ programName.summary }}</p>
+            <p>Categorie : {{ programName.category.name }}</p>
+        </div>
+    </div>
+
+    <ul>
+        {% for season in seasons %}
+
+            <li style="display: flex;">
+                <h1>Season {{ season.number }}</h1>
+                <p style="margin: 20px;">{{ season.year }}</p>
+            </li>
+            <p>{{ season.description }}</p>
+            <a href="{{ path('wild_show_season', {'seasonId':season.id}) }}" style="margin: 0 20px;">Listing épisodes</a>
+
+        {% else %}
+            Aucune série trouvée.
+        {% endfor %}
+    </ul>
+
+    <a href="{{ path('app_index') }}">
+        Retour à l'accueil
+    </a>
+
+{% endblock %}

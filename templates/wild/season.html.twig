@@ -1,0 +1,27 @@
+{# templates/wild/season.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Walking dead season{% endblock %}
+
+{% block body %}
+
+    <ul>
+        {% for episode in episodes %}
+
+            <li style="display: flex;">
+                <h1>{{ episode.title }}</h1>
+                <p style="margin: 20px;">{{ episode.number }}</p>
+            </li>
+            <p>{{ episode.synopsis }}</p>
+
+        {% else %}
+            Aucun épisode trouvée.
+        {% endfor %}
+    </ul>
+
+    <a href="{{ path('wild_show_program', {'programName':"walking-dead"}) }}">
+        Retour à l'accueil
+    </a>
+
+{% endblock %}
