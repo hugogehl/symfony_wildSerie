@@ -23,7 +23,7 @@
                 <p style="margin: 20px;">{{ season.year }}</p>
             </li>
             <p>{{ season.description }}</p>
-            <a href="{{ path('wild_show_season', {'seasonId':season.id}) }}" style="margin: 0 20px;">Listing épisodes</a>
+            <a href="{{ path('wild_show_season', {'seasonId':season.id}) }}" style="margin: 0 20px;">Season {{season.id}}</a>
 
         {% else %}
             Aucune série trouvée.

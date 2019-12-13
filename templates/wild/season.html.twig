@@ -14,14 +14,15 @@
                 <p style="margin: 20px;">{{ episode.number }}</p>
             </li>
             <p>{{ episode.synopsis }}</p>
+            <a href="{{ path('wild_show_episode', {'id':episode.id}) }}" style="margin: 0 20px;">{{episode.title}}</a>
 
         {% else %}
-            Aucun épisode trouvée.
+            Aucune liste d'épisode trouvée.
         {% endfor %}
     </ul>
 
     <a href="{{ path('wild_show_program', {'programName':"walking-dead"}) }}">
-        Retour à l'accueil
+        Retour à Walking Dead
     </a>
 
 {% endblock %}

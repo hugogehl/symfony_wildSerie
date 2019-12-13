@@ -1,0 +1,25 @@
+{# templates/wild/episode.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Walking dead episode{% endblock %}
+
+{% block body %}
+
+    <ul>
+        {% for episodeDetail in episodeDetails %}
+
+            <h1>Season {{ episodeDetail.number }}</h1>
+            <h4>{{ episodeDetail.title }}</h4>
+            <p>{{ episodeDetail.synopsis }}</p>
+
+        {% else %}
+            Aucun épisode trouvée.
+        {% endfor %}
+    </ul>
+
+    <a href="{{ path('wild_show_season', {'seasonId':"1"}) }}">
+        Retour à la saison 1 de Walking Dead
+    </a>
+
+{% endblock %}

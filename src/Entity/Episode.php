@@ -36,6 +36,11 @@ class Episode
      */
     private $season;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Program", inversedBy="seasons")
+     */
+    private $program;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -87,5 +92,10 @@ class Episode
         $this->season = $season;
 
         return $this;
+    }
+
+    public function getProgram(): ?Program
+    {
+        return $this->program;
     }
 }
