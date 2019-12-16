@@ -1,0 +1,16 @@
+{# templates/form/form.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ form_start(add_form) }}
+    {{ form_row(add_form.name) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(add_form) }}
+
+    <a href="{{ path('app_index') }}">
+        Retour à l'accueil
+    </a>
+
+{% endblock %}
