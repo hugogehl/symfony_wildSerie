@@ -7,6 +7,23 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <a class="nav-link" href="/">Wild Série <span class="sr-only">(current)</span></a>
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Admin
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ path('program_index') }}">Admin program</a>
+                    <a class="dropdown-item" href="{{ path('season_index') }}">Admin season</a>
+                    <a class="dropdown-item" href="{{ path('episode_index') }}">Admin episode</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <div class="nav-item dropdown">
+                    <a class="nav-link" href="{{ path('wild_index') }}">
+                        Afficher les série
+                    </a>
+                </div>
+            </div>
         </div>
     </nav>
 

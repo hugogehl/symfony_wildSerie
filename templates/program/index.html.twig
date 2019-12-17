@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Program index{% endblock %}
+
+{% block body %}
+    <h1>Program index</h1>
+
+    <div class="container-fluid">
+        <div class="row">
+        {% for program in programs %}
+
+            <div class="card col-3" style="width: 18rem;">
+                <img class="card-img-top" src="{{ program.poster }}" alt="{{ program.title }}">
+                <div class="card-body">
+                    <p class="card-text">{{ program.title }}</p>
+                    <p class="card-text">{{ program.summary }}</p>
+                    <p class="card-text">{{ program.country }}</p>
+                    <p class="card-text">{{ program.year }}</p>
+                    <a href="{{ path('program_show', {'id': program.id}) }}">show</a>
+                    <a href="{{ path('program_edit', {'id': program.id}) }}">edit</a>
+                </div>
+            </div>
+
+        {% else %}
+            <div>
+                <p colspan="7">no records found</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <a href="{{ path('program_new') }}">Create new</a>
+{% endblock %}

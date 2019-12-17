@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
         <h1>{{ acteurs }}</h1>
         <div class="block"></div>
         <h1>{{ categories }}</h1>
@@ -9,12 +10,7 @@
         </div>
         <h1>{{ favorites }}</h1>
         <div>
-                <a href="{{ path('wild_show_program', {'programName':"walking-dead"}) }}">Walking dead saisons</a>
+                <a href="{{ path('wild_show_program', {'programName':"walking-dead"}) }}">Walking dead</a>
         </div>
-        <div>
-                <a href="{{ path('wild_index') }}">Afficher les série</a>
-        </div>
-        <div>
-                <a href="{{ path('wild_show_category', {'categoryName':"horreur"}) }}">Afficher les séries de la category selectionnée</a>
-        </div>
+
 {% endblock %}
