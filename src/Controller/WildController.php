@@ -124,7 +124,6 @@ Class WildController extends AbstractController
     /**
      * @param string $programName
      * @Route("/program/{programName}",
-     * requirements={"programName"="[a-zA-Z0-9\.-]+"},
      * defaults={"programName"="null"},
      * name="show_program"
      * )

@@ -3,6 +3,12 @@
 {% block body %}
 
         <h1>{{ acteurs }}</h1>
+        <div>
+                <a href="{{ path('actor_index') }}">Acteurs</a>
+        </div>
+        <div>
+                <a href="{{ path('actor_show', {'id':"4"}) }}">Alycia Debnam-Carey</a>
+        </div>
         <div class="block"></div>
         <h1>{{ categories }}</h1>
         <div>

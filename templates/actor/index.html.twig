@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actor index{% endblock %}
+
+{% block body %}
+    <h1>Actor index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Séries</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actor in actors %}
+            <tr>
+                <td>{{ actor.id }}</td>
+                <td>{{ actor.name }}</td>
+                <td>
+                    <ul>
+                        {% for program in actor.programs %}
+                            <li><a href="{{ path('wild_show_program', {'programName':program.title}) }}">{{ program.title }}</a></li>
+                        {% else %}
+                            <li>Aucune série pour cet acteur</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/">Back to Home</a>
+{% endblock %}

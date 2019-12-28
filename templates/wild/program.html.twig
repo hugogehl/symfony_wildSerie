@@ -12,6 +12,14 @@
             <h1 class="mt-0">{{ programName.title }}</h1>
             <p>{{ programName.summary }}</p>
             <p>Categorie : {{ programName.category.name }}</p>
+            <strong>Acteur :</strong>
+            <ul>
+                {% for actor in programName.actors %}
+                    <li><a href="{{ path('actor_show', {'id':actor.id }) }}">{{ actor.name }}</a></li>
+                {% else %}
+                    <li>Aucun acteur pour cette série</li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 
