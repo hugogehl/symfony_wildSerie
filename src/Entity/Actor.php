@@ -24,7 +24,7 @@ class Actor
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Program", inversedBy="actors")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Program", inversedBy="actors", cascade={"persist"} )
      */
     private $programs;
 

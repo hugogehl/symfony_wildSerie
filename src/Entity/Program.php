@@ -55,7 +55,7 @@ class Program
     private $year;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Actor", mappedBy="programs")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Actor", mappedBy="programs", cascade={"persist"})
      */
     private $actors;
 
